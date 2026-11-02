@@ -68,6 +68,8 @@ Tests/         协议单元测试（用例来自真机抓取的应答）
 docs/          协议文档
 tools/mphid/   命令行调试工具（Swift 单文件），用于发送报文并打印应答
 Config/        签名配置
+icon/          图标源文件（SVG）
+scripts/       make-icon.sh：由 SVG 生成各尺寸图标（需要 `brew install librsvg`）
 LOG.md         开发日志
 ```
 
