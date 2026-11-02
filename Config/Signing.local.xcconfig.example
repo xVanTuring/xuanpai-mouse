@@ -1,0 +1,2 @@
+// 用 `security find-identity -v -p codesigning` 查看本机可用证书
+CODE_SIGN_IDENTITY = Apple Development: Your Name (XXXXXXXXXX)

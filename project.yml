@@ -1,0 +1,51 @@
+name: XuanpaiMouse
+options:
+  bundleIdPrefix: tech.xvanturing
+  deploymentTarget:
+    macOS: "15.0"
+  createIntermediateGroups: true
+configFiles:
+  Debug: Config/App.xcconfig
+  Release: Config/App.xcconfig
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    MARKETING_VERSION: "0.1.0"
+    CURRENT_PROJECT_VERSION: "1"
+targets:
+  XuanpaiMouse:
+    type: application
+    platform: macOS
+    sources:
+      - Sources
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: tech.xvanturing.XuanpaiMouse
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_CFBundleDisplayName: XuanpaiMouse
+        INFOPLIST_KEY_LSUIElement: YES
+        INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.utilities
+        INFOPLIST_KEY_NSHumanReadableCopyright: "Copyright © 2026 xvanturing"
+        ENABLE_APP_SANDBOX: NO
+        ENABLE_HARDENED_RUNTIME: YES
+  XuanpaiMouseTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - Tests
+    dependencies:
+      - target: XuanpaiMouse
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: tech.xvanturing.XuanpaiMouseTests
+        GENERATE_INFOPLIST_FILE: YES
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/XuanpaiMouse.app/Contents/MacOS/XuanpaiMouse"
+        BUNDLE_LOADER: "$(TEST_HOST)"
+schemes:
+  XuanpaiMouse:
+    build:
+      targets:
+        XuanpaiMouse: all
+    test:
+      targets:
+        - XuanpaiMouseTests

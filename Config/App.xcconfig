@@ -1,0 +1,5 @@
+// 默认使用临时签名，保证任何人都能直接构建。
+// 要用固定证书，复制 Signing.local.xcconfig.example 为 Signing.local.xcconfig 并填写证书名（该文件不会被提交）。
+CODE_SIGN_STYLE = Manual
+CODE_SIGN_IDENTITY = -
+#include? "Signing.local.xcconfig"
