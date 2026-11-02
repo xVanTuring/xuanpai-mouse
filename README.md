@@ -87,4 +87,4 @@ swiftc -O tools/mphid/main.swift -o mphid
 
 ## 许可
 
-暂未指定许可证。
+本项目以 [GNU 通用公共许可证第 3 版（GPL-3.0）](LICENSE) 发布。
